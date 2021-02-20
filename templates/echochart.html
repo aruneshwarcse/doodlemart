@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Echo|Visualization</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+        
+     .chart {
+  text-align: center;
+  margin: auto;
+}
+
+.row {
+  margin-bottom: 150px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+    </style>
+
+  </head>
+  <body>
+      
+    <h1>Twitter Sentiment Analysis <br>for Amazon's Echo Studio</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 chart">
+                <canvas id="myChart" width="1000" height="800"></canvas>
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart2" width="1000" height="800"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        let labels1 = ['YES', 'YES BUT IN GREEN'];
+let colors1 = ['#49A9EA', '#36CAAB'];
+
+let myDoughnutChart = document.getElementById("myChart").getContext('2d');
+
+let chart1 = new Chart(myDoughnutChart, {
+    type: 'doughnut',
+    data: {
+        labels: ['POSITIVE', 'NEGATIVE'],
+        datasets: [ {
+            data: [{{pos}},{{neg}}],
+            backgroundColor: ['#49A9EA', '#36CAAB']
+        }]
+    },
+    options: {
+        title: {
+            text: "Doughnut Chart",
+            display: true
+        }
+    }
+});
+
+let labels2 = ['Positive', 'Negative'];
+// let data2 = [75, 25];
+let colors2 = ['#49A9EA', '#36CAAB'];
+let id=0
+
+let myChart2 = document.getElementById("myChart2").getContext('2d');
+
+let chart2 = new Chart(myChart2, {
+    type: 'bar',
+    data: {
+        labels: ['POSITIVE', 'NEGATIVE'],
+        datasets: [ {
+            data: [{{pos}},{{neg}}],
+            backgroundColor: colors2
+
+        }]
+    },
+    options: {
+        title: {
+            text: "Bar Graph",
+            display: true
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+       
+    }
+});
+
+    </script>
+  </body>
+</html>

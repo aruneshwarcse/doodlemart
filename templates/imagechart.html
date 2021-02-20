@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Visualization</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+        .chart {
+  text-align: center;
+  margin: auto;
+}
+
+.row {
+  margin-bottom: 150px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+    </style>
+
+  </head>
+  <body>
+    <h1>Image Emotions Visualization</h1>
+    <div class="container">
+       
+        <div class="row">
+            <div class="col-6 chart">
+                <canvas id="myChart3" width="1000" height="800"></canvas>
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart4" width="1000" height="800"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+     
+let labels3 = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad','Surprise','Neutral'];
+let myChart3 = document.getElementById("myChart3").getContext('2d');
+
+let chart3 = new Chart(myChart3, {
+    type: 'radar',
+    data: {
+        labels: labels3,
+        datasets: [
+          {
+            label: 'Emotions',
+            fill: true,
+            backgroundColor: "rgba(179, 181, 198, 0.2)",
+            borderColor: "rgba(179, 181, 198, 1)",
+            pointBorderColor: "#fff",
+            pointBackgroundColor: "rgba(179, 181, 198, 1)",
+            data: [ {{angry}},{{disgust}},{{fear}},{{happy}},{{sad}},{{surprise}},{{neutral}}]
+          },
+        ]
+    },
+    options: {
+        title: {
+            text: "Radar Graph",
+            display: true
+        }
+    }
+});
+
+let labels4 = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad','Surprise','Neutral'];
+let data4 = [{{angry}},{{disgust}},{{fear}},{{happy}},{{sad}},{{surprise}},{{neutral}}];
+let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
+
+let myChart4 = document.getElementById("myChart4").getContext('2d');
+
+let chart4 = new Chart(myChart4, {
+    type: 'pie',
+    data: {
+        labels: labels4,
+        datasets: [ {
+            data: data4,
+            backgroundColor: colors4
+        }]
+    },
+    options: {
+        title: {
+            text: "Pie Chart",
+            display: true
+        }
+    }
+});
+    </script>
+  </body>
+</html>

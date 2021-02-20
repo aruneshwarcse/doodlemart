@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Image|Doodlemart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/themify-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lightslider.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/nice-select.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/price_range.css') }}">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        *,
+        *:after,
+        *:before {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: '';
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        
+        body {
+            font-family: Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+            color: #4b0f31;
+            
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        a {
+            outline: none;
+            color: #d3394c;
+            text-decoration: none;
+        }
+        
+        a:hover,
+        a:focus {
+            color: #722040;
+        }
+        
+        .hidden {
+            position: absolute;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            pointer-events: none;
+        }
+        
+        h1{
+            text-align: center;
+        }
+        /* Content */
+        
+        .content {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0 0 3em 0;
+        }
+        
+        .content footer {
+            color: #b39295;
+            margin-top: 40px;
+        }
+        
+        .content footer a:hover,
+        .content footer a:focus {
+            color: #4b0f31;
+        }
+        
+        .box {
+            background-color: #fbfbfb;
+            padding: 6.25rem 1.25rem;
+        }
+        
+        .box + .box {
+            margin-top: 2.5rem;
+        }
+        
+        /********** File Input Style starts here ********/
+        
+        .inputfile {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;   
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+        
+        .inputfile + label {
+            max-width: 80%;
+            font-size: 1.25rem;
+            /* 20px */
+            font-weight: 700;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: pointer;
+            display: inline-block;
+            overflow: hidden;
+            padding: 0.625rem 1.25rem;
+            /* 10px 20px */
+        }
+        
+        .no-js .inputfile + label {
+            display: none;
+        }
+        
+        .inputfile:focus + label,
+        .inputfile.has-focus + label {
+            outline: 1px dotted #000;
+            outline: -webkit-focus-ring-color auto 5px;
+        }
+        
+        
+        
+        .inputfile + label svg {
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            fill: currentColor;
+            margin-top: -0.25em;
+            /* 4px */
+            margin-right: 0.25em;
+            /* 4px */
+        }
+        
+        
+        /* style 1 */
+        
+        .inputfile-1 + label {
+            color: #f1e5e6;
+            background-color: #d3394c;
+        }
+        
+        .inputfile-1:focus + label,
+        .inputfile-1.has-focus + label,
+        .inputfile-1 + label:hover {
+            background-color: #722040;
+        }
+        
+        
+        /* style 2 */
+        
+        .inputfile-2 + label {
+            color: #d3394c;
+            border: 2px solid currentColor;
+        }
+        
+        .inputfile-2:focus + label,
+        .inputfile-2.has-focus + label,
+        .inputfile-2 + label:hover {
+            color: #722040;
+        }
+        
+        
+        /* style 3 */
+        
+        .inputfile-3 + label {
+            color: #d3394c;
+        }
+        
+        .inputfile-3:focus + label,
+        .inputfile-3.has-focus + label,
+        .inputfile-3 + label:hover {
+            color: #722040;
+        }
+        
+        
+        /* style 4 */
+        
+        .inputfile-4 + label {
+            color: #d3394c;
+        }
+        
+        .inputfile-4:focus + label,
+        .inputfile-4.has-focus + label,
+        .inputfile-4 + label:hover {
+            color: #722040;
+        }
+        
+        .inputfile-4 + label figure {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #d3394c;
+            display: block;
+            padding: 20px;
+            margin: 0 auto 10px;
+        }
+        
+        .inputfile-4:focus + label figure,
+        .inputfile-4.has-focus + label figure,
+        .inputfile-4 + label:hover figure {
+            background-color: #722040;
+        }
+        
+        .inputfile-4 + label svg {
+            width: 100%;
+            height: 100%;
+            fill: #f1e5e6;
+        }
+        
+        
+        /* style 5 */
+        
+        .inputfile-5 + label {
+            color: #d3394c;
+        }
+        
+        .inputfile-5:focus + label,
+        .inputfile-5.has-focus + label,
+        .inputfile-5 + label:hover {
+            color: #722040;
+        }
+        
+        .inputfile-5 + label figure {
+            width: 100px;
+            height: 135px;
+            background-color: #d3394c;
+            display: block;
+            position: relative;
+            padding: 30px;
+            margin: 0 auto 10px;
+        }
+        
+        .inputfile-5:focus + label figure,
+        .inputfile-5.has-focus + label figure,
+        .inputfile-5 + label:hover figure {
+            background-color: #722040;
+        }
+        
+        .inputfile-5 + label figure::before,
+        .inputfile-5 + label figure::after {
+            width: 0;
+            height: 0;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        .inputfile-5 + label figure::before {
+            border-top: 20px solid #dfc8ca;
+            border-left: 20px solid transparent;
+        }
+        
+        .inputfile-5 + label figure::after {
+            border-bottom: 20px solid #722040;
+            border-right: 20px solid transparent;
+        }
+        
+        .inputfile-5:focus + label figure::after,
+        .inputfile-5.has-focus + label figure::after,
+        .inputfile-5 + label:hover figure::after {
+            border-bottom-color: #d3394c;
+        }
+        
+        .inputfile-5 + label svg {
+            width: 100%;
+            height: 100%;
+            fill: #f1e5e6;
+        }
+        
+        /* style 6 */
+        .inputfile-6 + label {
+            color: #d3394c;
+        }
+        
+        .inputfile-6 + label {
+            border: 1px solid #d3394c;
+            background-color: #f1e5e6;
+            padding: 0;
+        }
+        
+        .inputfile-6:focus + label,
+        .inputfile-6.has-focus + label,
+        .inputfile-6 + label:hover {
+            border-color: #722040;
+        }
+        
+        .inputfile-6 + label span,
+        .inputfile-6 + label strong {
+            padding: 0.625rem 1.25rem;
+            /* 10px 20px */
+        }
+        
+        .inputfile-6 + label span {
+            width: 200px;
+            min-height: 2em;
+            display: inline-block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            vertical-align: top;
+        }
+        
+        .inputfile-6 + label strong {
+            height: 100%;
+            color: #f1e5e6;
+            background-color: #d3394c;
+            display: inline-block;
+        }
+        
+        .inputfile-6:focus + label strong,
+        .inputfile-6.has-focus + label strong,
+        .inputfile-6 + label:hover strong {
+            background-color: #722040;
+        }
+        
+        @media screen and (max-width: 50em) {
+            .inputfile-6 + label strong {
+                display: block;
+            }
+        }
+        
+            </style>
+</head>
+
+<body>
+
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="{{url_for('home')}}"> <img src="../static/img/logo.png" width="125px" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="menu_icon"><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('category')}}">Shop</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        pages
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                        <a class="dropdown-item" href="{{url_for('tracking')}}">tracking</a>
+                                        <a class="dropdown-item" href="{{url_for('checkout')}}">product checkout</a>
+                                        <a class="dropdown-item" href="{{url_for('cart')}}">shopping cart</a>
+                                        <a class="dropdown-item" href="{{url_for('confirmation')}}">confirmation</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Models
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                        <a class="dropdown-item" href="{{url_for('textsentiment')}}">Text</a>
+                                        <a class="dropdown-item" href="{{url_for('voice')}}">Voice</a>
+                                        <a class="dropdown-item" href="{{url_for('images')}}">Image</a>
+                                        
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="hearer_icon d-flex">
+                            <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <a href="#"><i class="ti-heart"></i></a>
+                            <a href=""><i class="fas fa-shopping-cart"></i></a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="{{ url_for('logout') }}">Logout</a>
+                        </div>
+                        
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="search_input" id="search_input_box">
+            <div class="container ">
+                <form class="d-flex justify-content-between search-inner">
+                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                    <button type="submit" class="btn"></button>
+                    <span class="ti-close" id="close_search" title="Close Search"></span>
+                </form>
+            </div>
+        </div>
+    </header>
+
+   
+    <section class="contact-section padding_top">
+        <div class="container">
+            <div class="d-none d-sm-block mb-5 pb-4">
+                 
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="contact-title">IMAGE SENTIMENT ANALYSIS</h2>
+                </div>
+                <div class="col-lg-8">
+
+                    <form class="form-contact contact_form" action="{{ url_for('imagechart')}}" method="post" enctype="multipart/form-data" > 
+                          <!-- <input type="file" name="file"/><br><br> -->
+                          <input type="file" name="file" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} files selected" multiple />
+                          <label for="file-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                          <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a file&hellip;</span></label>
+                           <!-- <br><br>   <button type="submit" class="btn_3">Submit</button> -->
+                            <br><br>
+                        <a href="{{url_for('imagechart')}}">
+                          <!-- <button type="submit" class="btn_3">Submit</button> -->
+                          <input type="submit" class="btn_3">
+                        </a>
+                    </form>
+                   
+                </div>
+                       
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer_part">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-sm-6 col-lg-2">
+                    <div class="single_footer_part">
+                        <h4>Get to Know Us</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Release</a></li>
+                            <li><a href="#">Gift a Smile</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <div class="single_footer_part">
+                        <h4>Tools & Apps</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Developers</a></li>
+                            <li><a href="#">Security center</a></li>
+                            <li><a href="#">Affiliates</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <div class="single_footer_part">
+                        <h4>About</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Newsroom</a></li>
+                            <li><a href="#">Job Oppurtunities</a></li>
+                            <li><a href="#">Investors</a></li>
+                            <li><a href="#">Events</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <div class="single_footer_part">
+                        <h4>Help & Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Resoution Center</a></li>
+                            <li><a href="#">Seller Center</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Returns</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="single_footer_part">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe to us to<br>learn more! </p>
+                        <div id="mc_embed_signup">
+                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part">
+                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+                                <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">subscribe</button>
+                                <div class="mt-10 info"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright_part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                     <p>&#169; Enterprise AI.TCS Inframind 2020-2021</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="footer_icon social_icon">
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>  
+                                <li><a href="#" class="single_social_icon"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        'use strict';
+        ;( function ( document, window, index )
+        {
+            var inputs = document.querySelectorAll( '.inputfile' );
+            Array.prototype.forEach.call( inputs, function( input )
+            {
+                var label	 = input.nextElementSibling,
+                    labelVal = label.innerHTML;
+        
+                input.addEventListener( 'change', function( e )
+                {
+                    var fileName = '';
+                    if( this.files && this.files.length > 1 )
+                        fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+                    else
+                        fileName = e.target.value.split( '\\' ).pop();
+        
+                    if( fileName )
+                        label.querySelector( 'span' ).innerHTML = fileName;
+                    else
+                        label.innerHTML = labelVal;
+                });
+        
+                // Firefox bug fix
+                input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+                input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
+            });
+        }( document, window, 0 ));
+            </script>
+    <script src="{{url_for('static', filename='js/jquery-1.12.1.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.magnific-popup.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/slick.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.counterup.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/contact.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.ajaxchimp.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.form.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/jquery.validate.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/mail-script.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/stellar.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/price_rangs.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/custom.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/lightslider.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/masonry.pkgd.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/popper.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/swiper.jquery.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/swiper.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/theme.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/waypoints.min.js')}}"></script> 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+</body>
+
+
+</html>

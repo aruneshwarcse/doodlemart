@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Dashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-face.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/font-awesome-4.7/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/font-awesome-5/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/mdi-font/css/material-design-iconic-font.min.css')}}">
+    
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css"  media="all" href="{{url_for('static',filename='vendor/bootstrap-4.1/bootstrap.min.css')}}">
+
+    <!-- Vendor CSS-->
+    <link rel="stylesheet" type="text/css"  media="all" href="{{url_for('static',filename='vendor/animsition/animsition.min.css')}}">
+    <link rel="stylesheet" type="text/css"  media="all" href="{{url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}">
+    <link rel="stylesheet" type="text/css"  media="all" href="{{url_for('static',filename='vendor/wow/animate.css')}}">
+    <link rel="stylesheet" type="text/css"  media="all" href="{{url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css')}}">
+    <link rel="stylesheet" type="text/css"  media="all" href="{{url_for('static',filename='vendor/slick/slick.css')}}">
+    <link rel="stylesheet" type="text/css"  media="all" href="{{url_for('static',filename='vendor/select2/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css"  media="all" href="{{url_for('static',filename='vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
+    
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css"  media="all" href="{{url_for('static',filename='css/theme.css')}}">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <header class="header-desktop3 d-none d-lg-block">
+            <div class="section__content section__content--p35">
+                <div class="header3-wrap">
+                    <div class="header__logo">
+                        <a href="#">
+                            <img src="../static/img/logo.png" alt="Doodlemart" width="125px" />
+                        </a>
+                    </div>
+                    <div class="header__navbar">
+                       
+                               
+                    </div>
+                    <div class="header__tool">
+                       
+                        <div class="account-wrap">
+                                
+                                <div class="content">
+                                        <a >Welcome, Admin</a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="{{url_for('camera')}}">  
+                                        <i class="fa fa-camera" aria-hidden="true"></i>
+                                        </a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                   
+                                    <a href="{{ url_for('login') }}"> Logout</a>
+                                </div>       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+     
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                    <h2 class="title-1">overview</h2>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-t-25">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c1">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-account-o"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>10368</h2>
+                                                <span>members online</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart1"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c2">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-shopping-cart"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>388,688</h2>
+                                                <span>items solid</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart2"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c3">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-calendar-note"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>1,086</h2>
+                                                <span>this week</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart3"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c4">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <!-- <i class="zmdi zmdi-money"></i> -->
+                                            </div>
+                                            <div class="text">
+                                                <h2>&#8377; 1,060,386</h2>
+                                                <span>total earnings</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart4"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="au-card recent-report">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2">recent reports</h3>
+                                        <div class="chart-info">
+                                            <div class="chart-info__left">
+                                                <div class="chart-note">
+                                                    <span class="dot dot--blue"></span>
+                                                    <span>products</span>
+                                                </div>
+                                                <div class="chart-note mr-0">
+                                                    <span class="dot dot--green"></span>
+                                                    <span>services</span>
+                                                </div>
+                                            </div>
+                                            <div class="chart-info__right">
+                                                <div class="chart-statis">
+                                                    <span class="index incre">
+                                                        <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
+                                                    <span class="label">products</span>
+                                                </div>
+                                                <div class="chart-statis mr-0">
+                                                    <span class="index decre">
+                                                        <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
+                                                    <span class="label">services</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recent-report__chart">
+                                            <canvas id="recent-rep-chart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="au-card chart-percent-card">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2 tm-b-5">char by %</h3>
+                                        <div class="row no-gutters">
+                                            <div class="col-xl-6">
+                                                <div class="chart-note-wrap">
+                                                    <div class="chart-note mr-0 d-block">
+                                                        <span class="dot dot--blue"></span>
+                                                        <span>products</span>
+                                                    </div>
+                                                    <div class="chart-note mr-0 d-block">
+                                                        <span class="dot dot--red"></span>
+                                                        <span>services</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="percent-chart">
+                                                    <canvas id="percent-chart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <h2 class="title-1 m-b-25">Earnings By Items</h2>
+                                <div class="table-responsive table--no-card m-b-40">
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th>date</th>
+                                                <th>order ID</th>
+                                                <th>name</th>
+                                                <th class="text-right">price</th>
+                                                <th class="text-right">quantity</th>
+                                                <th class="text-right">total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2018-09-29 05:57</td>
+                                                <td>100398</td>
+                                                <td>iPhone X 64Gb Grey</td>
+                                                <td class="text-right">&#8377;999.00</td>
+                                                <td class="text-right">1</td>
+                                                <td class="text-right">&#8377;999.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-28 01:22</td>
+                                                <td>100397</td>
+                                                <td>Samsung S8 Black</td>
+                                                <td class="text-right">&#8377;756.00</td>
+                                                <td class="text-right">1</td>
+                                                <td class="text-right">&#8377;756.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-27 02:12</td>
+                                                <td>100396</td>
+                                                <td>Game Console Controller</td>
+                                                <td class="text-right">&#8377;22.00</td>
+                                                <td class="text-right">2</td>
+                                                <td class="text-right">&#8377;544.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-26 23:06</td>
+                                                <td>100395</td>
+                                                <td>iPhone X 256Gb Black</td>
+                                                <td class="text-right">&#8377;1199.00</td>
+                                                <td class="text-right">1</td>
+                                                <td class="text-right">&#8377;1199.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-25 19:03</td>
+                                                <td>100393</td>
+                                                <td>USB 3.0 Cable</td>
+                                                <td class="text-right">&#8377;10.00</td>
+                                                <td class="text-right">3</td>
+                                                <td class="text-right">&#8377;30.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <h2 class="title-1 m-b-25">Top Cities</h2>
+                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                                    <div class="au-card-inner">
+                                        <div class="table-responsive">
+                                            <table class="table table-top-countries">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Chennai</td>
+                                                        <td class="text-right">&#8377;119,366.96</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Puducherry</td>
+                                                        <td class="text-right">&#8377;70,261.65</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Delhi</td>
+                                                        <td class="text-right">&#8377;46,399.22</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Gujarat</td>
+                                                        <td class="text-right">&#8377;35,364.90</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kerala</td>
+                                                        <td class="text-right">&#8377;20,366.96</td>
+                                                    </tr>
+                                                 
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Enterprise AI. TCS Inframind 2020-2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{url_for('static', filename='vendor/jquery-3.2.1.min.js')}}"></script> 
+
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="{{url_for('static', filename='vendor/bootstrap-4.1/popper.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/bootstrap-4.1/bootstrap.min.js')}}"></script> 
+
+    <!-- Vendor JS       -->
+    <script src="{{url_for('static', filename='vendor/slick/slick.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/wow/wow.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/animsition/animsition.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/counter-up/jquery.waypoints.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/counter-up/jquery.counterup.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/circle-progress/circle-progress.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/chartjs/Chart.bundle.min.js')}}"></script> 
+    <script src="{{url_for('static', filename='vendor/select2/select2.min.js')}}"></script> 
+
+    
+    <!-- Main JS-->
+    <script src="{{url_for('static', filename='js/main.js')}}"></script> 
+
+</body>
+
+</html>
+<!-- end document-->
