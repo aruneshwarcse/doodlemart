@@ -172,7 +172,7 @@ def chart():
     api = tweepy.API(auth)
 
     searchTerm ="ipad"
-    NoOfTerms = 100
+    NoOfTerms = 1000
     
     tweets = tweepy.Cursor(api.search, q=searchTerm, lang = "en").items(NoOfTerms)
     polarity = 0
@@ -220,7 +220,7 @@ def hddchart():
     api = tweepy.API(auth)
 
     searchTerm ="seagate"
-    NoOfTerms = 100
+    NoOfTerms = 1000
     
     tweets = tweepy.Cursor(api.search, q=searchTerm, lang = "en").items(NoOfTerms)
     polarity = 0
@@ -269,7 +269,7 @@ def echochart():
     api = tweepy.API(auth)
 
     searchTerm ="amazonecho"
-    NoOfTerms = 100
+    NoOfTerms = 1000
     
     tweets = tweepy.Cursor(api.search, q=searchTerm, lang = "en").items(NoOfTerms)
     polarity = 0
@@ -317,7 +317,7 @@ def iphonechart():
     api = tweepy.API(auth)
 
     searchTerm ="iphone"
-    NoOfTerms = 100
+    NoOfTerms = 1000
     
     tweets = tweepy.Cursor(api.search, q=searchTerm, lang = "en").items(NoOfTerms)
     polarity = 0
